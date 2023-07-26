@@ -1,0 +1,60 @@
+1. Named function
+function paraAndArea(){
+    var length = parseInt(prompt("Enter length: " ));
+    var breadth = parseInt(prompt("Enter breadth: "));
+    console.log(`Perimeter of rectangle having ${length} and ${breadth} is: ${2*(length+breadth)}`);
+    console.log(`Area of rectangle having ${length} and ${breadth} is: ${length*breadth}`);
+}
+
+2. Anonymous Function or Function Expression
+function calc(){
+//anonymous function
+   var add = function(x = 0, y = 0){
+		return x + y;
+   }
+   var sub = function(x = 0, y = 0){
+		return x - y;
+   }
+   return [add,sub];
+}
+
+calc()[1][2,4] -> for subtraction
+calc()[0][3,6] -> for addtion
+
+OR
+
+function calc(){
+//anonymous function
+   var add = function(x = 0, y = 0){
+		return x + y;
+   }
+   var sub = function(x = 0, y = 0){
+		return x - y;
+   }
+   return {add,sub};
+}
+
+calc().sub(3,2) -> for sub
+calc().add(1,2) -> for add
+
+
+3. Named function expression : don't hoist the add and sub variable
+
+function calc(){
+   var add = function add(x = 0, y = 0){
+		return x + y;
+   }
+   var sub = function sub(x = 0, y = 0){
+		return x - y;
+   }
+   return {add,sub};
+}
+
+4. Arrow Function
+const areaPar = () => {
+    var length = parseInt(prompt("Enter length: " ));
+    var breadth = parseInt(prompt("Enter breadth: "));
+    console.log(`Perimeter of rectangle having ${length} and ${breadth} is: ${2*(length+breadth)}`);
+    console.log(`Area of rectangle having ${length} and ${breadth} is: ${length*breadth}`);
+}
+
