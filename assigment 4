@@ -1,0 +1,43 @@
+1.let salaries = [12000, 8000, 15000, 9000, 11000, 13000, 9500, 10500];
+let newarr3=salaries.reduce((h1,h2)=>{
+    if (h2>10000){
+    return h1+h2;
+    }
+    else{
+        return h1;
+    }
+})
+console.log(newarr3);
+2.let salaries = [12000, 8000, 15000, 9000, 11000, 13000, 9500, 10500];
+
+let maxSalary = salaries.reduce((max, currentSalary) => {
+  return Math.max(max, currentSalary);
+}, salaries[0]);
+
+console.log("Maximum Salary:", maxSalary);
+3.let salaries = [12000, 8000, 15000, 9000, 11000, 13000, 9500, 10500];
+
+let countSalariesGreaterThan10000 = salaries.reduce((count, currentSalary) => {
+  if (currentSalary > 10000) {
+    
+    return count + 1;
+  } else {
+   
+    return count;
+  }
+}, 0);
+
+console.log("Number of Salaries greater than 10000:", countSalariesGreaterThan10000);
+4.let employees = [
+  { name: "John", salary: 50000 },
+  { name: "Alice", salary: 60000 },
+  { name: "Bob", salary: 45000 },
+  { name: "Emma", salary: 55000 },
+];
+
+
+employees.sort((a, b) => a.name.localeCompare(b.name));
+employees.sort((a, b) => a.salary - b.salary);
+console.log("Employees sorted by Name:", employees);
+console.log("Employees sorted by Salary:", employees);
+
